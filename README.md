@@ -2,6 +2,22 @@
 
 A React Native (Expo) chatbot app for City General Hospital. MedBot helps patients and visitors with appointment scheduling, department info, visiting hours, pharmacy details, emergency contacts, and billing inquiries.
 
+## Screenshots
+
+### Web
+
+| Welcome | Appointment | Emergency |
+|---------|------------|-----------|
+| <img src="screenshots/01_welcome.png" width="250"/> | <img src="screenshots/02_appointment.png" width="250"/> | <img src="screenshots/03_emergency.png" width="250"/> |
+
+| Visiting Hours | Departments |
+|---------------|-------------|
+| <img src="screenshots/04_visiting.png" width="250"/> | <img src="screenshots/05_departments.png" width="250"/> |
+
+### iOS
+
+<img src="screenshots/ios_01_welcome.png" width="300"/>
+
 ## Features
 
 - AI-powered chat using Claude API (Anthropic)
