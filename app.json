@@ -1,0 +1,21 @@
+{
+  "expo": {
+    "name": "MedBot - Hospital Assistant",
+    "slug": "hospital-chatbot",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "web": {
+      "bundler": "metro",
+      "output": "single"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.poc.hospitalchatbot"
+    },
+    "android": {
+      "package": "com.poc.hospitalchatbot"
+    },
+    "platforms": ["ios", "android", "web"]
+  }
+}
