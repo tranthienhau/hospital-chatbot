@@ -2,6 +2,34 @@
 
 A React Native (Expo) chatbot app for City General Hospital. MedBot helps patients and visitors with appointment scheduling, department info, visiting hours, pharmacy details, emergency contacts, and billing inquiries.
 
+## Demo
+
+<img src="screenshots/demo.gif" width="280"/>
+
+## Architecture
+
+```mermaid
+flowchart TD
+    User([User]) -->|types message / taps quick reply| ChatScreen[ChatScreen]
+    ChatScreen -->|append user message| State[(Messages State)]
+    ChatScreen -->|show| Typing[TypingIndicator]
+    ChatScreen -->|sendMessage history| Service[claudeService]
+
+    Service --> Mock{Mock mode?}
+    Mock -->|true| Keyword[getMockResponse<br/>keyword match]
+    Mock -->|false| API[Claude API<br/>Haiku model]
+
+    Keyword --> Reply[Assistant reply]
+    API --> Reply
+    Reply -->|append assistant message| State
+    State --> Render[FlatList of ChatBubble]
+    Render --> QR[QuickReplies chips]
+    QR -->|tap| ChatScreen
+    Render --> User
+```
+
+The keyword router maps intents - appointment, visiting, emergency, pharmacy, department, insurance, hours - to canned responses in mock mode, or forwards the full conversation history to the Claude API when `USE_MOCK = false`.
+
 ## Screenshots
 
 ### Web
